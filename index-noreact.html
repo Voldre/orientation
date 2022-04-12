@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css" />
+    <!--<meta http-equiv="refresh" content="2">-->
+
+    <meta name="viewport" content="width=device-width, minimum-scale=0.7" />
+    <meta name="viewport" content="width=device-width, maximum-scale=3.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"></script>
+    <script type="text/javascript" src="myCharts.js"></script>
+
+    <!-- CSV to JSON : https://csvjson.com/csv2json -->
+
+    <title>Orientation X</title>
+</head>
+
+<body onload="diplomes();">
+    <div class=" fixe ">
+        <h1>Orientation ...</h1>
+        <h3>L'outil d'orientation fait par les jeunes, pour les jeunes</h3>
+        <h3>*Autres = Réorientation (issu d'une autre université) + Etrangés + Reprise d'étude</h3>
+    </div>
+    <br/>
+    <nav>
+        <ul>
+            <li class="deroulant ">
+                <a href="# "><img src=" " class="icon "></a>
+                <ul class="sous ">
+                    <li><a href="temoignages.html ">Vue d'ensemble</a></li>
+                    <li><a href="# ">Les formations liés à vos passions</a></li>
+                    <li><a href="# ">. . .</a></li>
+                    <li><a href="# ">. . .</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <br/><br/>
+    <br/><br/>
+
+    <div class="APIContent"></div>
+
+    <script type="text/javascript">
+        var output = "";
+        var index = 0;
+        var maliste = [];
+
+        function listediplomes(table) {
+
+            maliste = [];
+            for (i in table) {
+                maliste.push(table[i]['Filière de formation très agrégée']);
+            }
+            return maliste;
+        }
+
+        function display(infos) {
+            output = "<div class='flexcontainer'>";
+            for (i in infos) {
+                output += "<div class='diplome' >" + infos[i] + "</div>";
+            }
+            output += "</div>";
+            $(".APIContent").append(output);
+        }
+
+        function diplomes() {
+            //fetch("fr-esr-parcoursup-2018.json ")
+            fetch("data/parcoursup-2018-diplomes.json ")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(jsonResponse) {
+                    console.log(jsonResponse)
+
+                    console.log(listediplomes(jsonResponse));
+
+                    display(listediplomes(jsonResponse));
+
+                    Object.values(jsonResponse).forEach(table => {
+
+                        table["Effectif total des admis"] = table["En Phase Principale__1"] + table["En Phase Complémentaire__1"];
+                        table["Autres"] = table["Effectif total des admis"] - table["Dont Bac G__2"] - table["Dont Bac Tech__2"] - table["Dont Bac Pro__2"];
+                        //console.log(table)
+                        output = "<div class='container'>";
+
+                        output += "<li>" + table["Effectif total des admis"] + " admis</li>";
+                        //output += "<li>Dont " + Math.round(100 * table["En Phase Principale__1"] / table["Effectif total des admis"]) + "% en Phase Principale</li>";
+                        output += "<li>Dont " + Math.round(1000 * table["Dont Bac G__2"] / table["Effectif total des admis"]) / 10 + "% venant d'un Bac Général</li>";
+                        output += "<li>Dont " + Math.round(1000 * table["Dont Bac Tech__2"] / table["Effectif total des admis"]) / 10 + "% venant d'un Bac Technologique</li>";
+                        output += "<li>Dont " + Math.round(1000 * table["Dont Bac Pro__2"] / table["Effectif total des admis"]) / 10 + "% venant d'un Bac Professionnel</li>";
+
+                        table["Autres"] = table["Effectif total des admis"] - (table["Dont Bac G__2"] + table["Dont Bac Tech__2"] + table["Dont Bac Pro__2"]);
+
+                        output += "<li>Dont " + Math.round(1000 * table["Autres"] / table["Effectif total des admis"]) / 10 + "% autres (réorientation, étrangés, reprise d'études)</li>";
+
+                        output += '<div class="chart"> <canvas id="pie-chart-' + index + '" width="800" height="450"></canvas></div>';
+                        Object.entries(table).forEach(([key, value]) => {
+                            // Dans un seul array, la liste des valeurs à récupérer
+                            //final_array.push(value2["total "], value2["msg "], value2["Periode "], value2["sender "]);
+
+                            //console.log(value);
+                            output += "<br/>" + key + " : " + value;
+                        })
+
+                        output = output.replaceAll("Effectif total des admis", "Admis")
+
+                        console.log("pie-chart-" + index)
+
+                        $(".APIContent ").append(output + "</div>");
+                        newChart("pie-chart-" + index, table);
+                        index++;
+
+                    })
+                })
+
+
+        }
+
+        function newChart(id, table) {
+
+            console.log(id)
+
+            var keys = ["Dont Bac G__2", "Dont Bac Tech_2", "Dont Bac Pro__2", "Autres"];
+            var showKeys = ["Bac Général", "Bac Technologique", "Bac Professionnel", "Autres"];
+
+
+            var data = [{
+                data: [],
+                labels: [],
+                backgroundColor: [
+                    "#4b77a9",
+                    "#5f255f",
+                    "#d21243",
+                    "#B27200"
+                ],
+                borderColor: "#fff"
+            }];
+
+            var options = {
+                plugins: {
+                    datalabels: {
+                        formatter: (value, ctx) => {
+                            let datasets = ctx.chart.data.datasets;
+
+                            if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+                                let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+                                let percentage = Math.round((value / sum) * 100) + "%";
+                                if (Math.round((value / sum) * 100) > 5) {
+                                    return percentage;
+                                } else {
+                                    return "";
+                                }
+                            } else {
+                                return percentage;
+                            }
+                        },
+                        color: "white"
+                    }
+                }
+            };
+
+
+
+
+
+
+
+
+            var ctx = document.getElementById(id).getContext("2d");
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    datasets: data
+                },
+                plugins: [ChartDataLabels],
+                options: options
+            });
+
+
+            console.log(myChart.data.datasets[0].data);
+            for (j in keys) {
+                //console.log(myChart.data.datasets[0].data)
+                myChart.data.datasets[0].data.push(table[keys[j]]);
+                myChart.data.labels.push(showKeys[j]);
+            }
+
+            myChart.update();
+        }
+        /* function analysis() { } function SourceTable(big_table) { fetch("https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup-2018&q=&lang=FR&rows=10000&facet=session&facet=cod_uai&facet=g_ea_lib_vx&facet=dep_lib&facet=region_etab_aff&facet=acad_mies&facet=fili&facet=form_lib_voe_acc&facet=regr_forma&facet=fil_lib_voe_acc&facet=detail_forma&facet=tri
+           ") .then(function(response) { return response.json(); }) .then(function(jsonResponse) { console.log(jsonResponse) Object.values(jsonResponse["facet_groups"][big_table]).forEach(table => { console.log(table) if (Array.isArray(table)) { Object.entries(table).forEach(([key,
+           value]) => { console.log(value); $(".APIContent").prepend("
+           <p>" + value["name"] + " : " + value["count"] + "</p>"); }) } }) //}) }); var nb_msg = 0 //alert(JSON.stringify(jsonResponse.data[4].Periode)); // tableau récupérant tous les nombres de messages //var total = []; //var msg = []; var final_array = [];
+           /////////////////////////////////////// var delay = 20; //20 } */
+    </script>
+
+    <div class="conteneur ">
+        <h2>Qu'est-ce que c'est ?</h2>
+        <br/>
+        <p>Un outil en ligne vous permettant de ...</p>
+    </div>
+    <div class="conteneur ">
+        <h2>Plus d'informations</h2>
+        <br/>
+        <p>Sur le site <a href="https://www.agata.asso.fr/article/FR/qu-est-ce-que-l-addiction/prevention/le-protoxyde-dazote ">AGATA</a></p>
+    </div>
+</body>
+
+</html>

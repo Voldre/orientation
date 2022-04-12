@@ -1,0 +1,204 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+
+body {
+    margin: 2%;
+    background-color: rgb(36, 35, 35);
+    color: wheat;
+}
+
+.APIContent {
+    text-align: center;
+    border: 1px black solid;
+}
+
+.diplome {
+    background-color: rgba(13, 13, 173, 0.3);
+    border: 2px black solid;
+    justify-content: flex;
+    padding: 10px;
+    margin: 10px;
+}
+
+.container {
+    border: 2px rgba(255, 255, 255, 0.700) solid;
+    border-radius: 2px;
+    margin: 3%;
+    margin-left: 2%;
+    margin-right: 3%;
+    text-align: center;
+    min-width: 570px;
+}
+
+.flexcontainer {
+    border: 2px rgba(255, 255, 255, 0.700) solid;
+    border-radius: 2px;
+    margin: 3%;
+    margin-left: 2%;
+    margin-right: 3%;
+    text-align: center;
+    min-width: 570px;
+    display: flex;
+}
+
+.chart {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: wheat;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h1,
+h2,
+h3,
+p {
+    color: wheat;
+}
+
+.fixe {
+    position: fixed;
+    background-color: rgb(4, 12, 35);
+    width: 100%;
+    padding: 40px 0 20px 0px;
+    border-bottom: 6px rgba(0, 0, 0, 0.5) solid;
+}
+
+.fixe h1,
+.fixe h3 {
+    color: rgb(255, 250, 250);
+    text-align: center;
+}
+
+.conteneur h3,
+.conteneur h2 {
+    text-decoration: underline;
+}
+
+nav {
+    z-index: 2;
+    width: 26%;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    /*rgb(90, 90, 105);*/
+    border-radius: 3px;
+    position: sticky;
+    top: 0px;
+    padding-right: -5px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+.sous {
+    display: block;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: rgba(125, 125, 150, 0.9);
+    position: absolute;
+    width: 105%;
+    z-index: 1000;
+    transition: all .3s;
+    left: -80%;
+}
+
+nav>ul li:hover .sous {
+    transform: translateX(+75%);
+    margin-left: -15px;
+}
+
+.sous li {
+    float: none;
+    width: 100%;
+    text-align: center;
+    border: 1px rgba(0, 0, 0, 0.427) solid;
+}
+
+.sous a {
+    border-bottom: none;
+}
+
+.sous a:hover {
+    border-bottom: none;
+    background-color: RGBa(200, 200, 200, 0.1);
+}
+
+.deroulant>a::after {
+    content: " ▼";
+    font-size: 24px;
+}
+
+.conteneur {
+    margin: 50px 20px;
+    padding: 8px;
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+}
+
+iframe {
+    width: 80%;
+    height: 425px;
+}
+
+@media only screen and (max-width:990px) {
+    /* For tablets: */
+    nav {
+        width: 40%;
+        font-size: 32px;
+        color: wheat;
+        font-weight: bold;
+    }
+    .fixe h1 {
+        font-size: 36px;
+    }
+    .fixe h3 {
+        font-size: 22px;
+    }
+    .deroulant>a::after {
+        color: blue;
+    }
+    nav a {
+        padding: 15px 4px;
+    }
+}

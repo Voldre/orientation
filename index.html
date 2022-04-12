@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css" />
+    <!--<meta http-equiv="refresh" content="2">-->
+
+    <meta name="viewport" content="width=device-width, minimum-scale=0.7" />
+    <meta name="viewport" content="width=device-width, maximum-scale=3.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"></script>
+    <script type="text/javascript" src="myCharts.js"></script>
+
+
+    <!-- CSV to JSON : https://csvjson.com/csv2json -->
+
+    <title>Orientation X</title>
+</head>
+
+<body onload="">
+
+    <div id="body"></div>
+
+
+    <br/><br/>
+    <br/><br/>
+
+    <div id="monreact"></div>
+
+    <div class="APIContent "></div>
+
+
+    <!-- REACT -->
+    <!-- --- Initialisation --- -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- --- Appel des programmes --- -->
+    <!-- Pour appeler un fichier JSX (ReactJS avec la syntaxe JSX)
+    Il faut vraiment décrire type="text/babel"-->
+
+    <script type="text/babel" src="index.jsx"></script>
+
+    <!-- Fin des programmes REACT -->
+
+
+
+    <div class="conteneur ">
+        <h2>Qu'est-ce que c'est ?</h2>
+        <br/>
+        <p>Un outil en ligne vous permettant de ...</p>
+    </div>
+    <div class="conteneur ">
+        <h2>Plus d'informations</h2>
+        <br/>
+        <p>Sur le site <a href="https://www.agata.asso.fr/article/FR/qu-est-ce-que-l-addiction/prevention/le-protoxyde-dazote ">AGATA</a></p>
+    </div>
+</body>
+
+</html>
