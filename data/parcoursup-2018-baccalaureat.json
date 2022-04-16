@@ -1,0 +1,62 @@
+{
+    "Bac G": {
+        "Candidats": {
+            "Autre formation": 1700411,
+            "BTS": 333427,
+            "CPGE": 575128,
+            "DUT": 493573,
+            "Licence": 1263246,
+            "PACES": 176758,
+            "Total": 4542543
+        },
+        "Admis": {
+            "Autre formation": 25740,
+            "BTS": 17657,
+            "CPGE": 35934,
+            "DUT": 31507,
+            "Licence": 154123,
+            "PACES": 35241,
+            "Total": 300202
+        }
+    },
+    "Bac Tech": {
+        "Candidats": {
+            "Autre formation": 131339,
+            "BTS": 596287,
+            "CPGE": 22351,
+            "DUT": 222283,
+            "Licence": 150031,
+            "PACES": 7885,
+            "Total": 1130176
+        },
+        "Admis": {
+            "Autre formation": 5496,
+            "BTS": 41814,
+            "CPGE": 2703,
+            "DUT": 16458,
+            "Licence": 25673,
+            "PACES": 1602,
+            "Total": 93746
+        }
+    },
+    "Bac Pro": {
+        "Candidats": {
+            "Autre formation": 30254,
+            "BTS": 474870,
+            "CPGE": 663,
+            "DUT": 20139,
+            "Licence": 34792,
+            "PACES": 1872,
+            "Total": 562590
+        },
+        "Admis": {
+            "Autre formation": 2453,
+            "BTS": 41606,
+            "CPGE": 119,
+            "DUT": 701,
+            "Licence": 9965,
+            "PACES": 543,
+            "Total": 55387
+        }
+    }
+}

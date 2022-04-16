@@ -123,5 +123,26 @@
         "Dont F": 150426,
         "Dont F__1": 28851,
         "Filière de formation très agrégée": "PACES"
+    },
+    {
+        "Effectif total des candidats pour la formation": 7809337,
+        "En Phase Principale": 7472261,
+        "Dont Bac Tech": 1130176,
+        "En Phase Complémentaire": 334990,
+        "Dont Bac Tech__1": 61921,
+        "Dont Bac Pro": 562590,
+        "Dont Bac Pro__1": 39394,
+        "Dont Bac G": 4542543,
+        "Dont Bac G__1": 60690,
+        "Dont Néo Bac": 449335,
+        "En Phase Principale__1": 508339,
+        "En Phase Complémentaire__1": 59827,
+        "Nb Max Admis": 686705,
+        "Dont Bac G__2": 300202,
+        "Dont Bac Pro__2": 55387,
+        "Dont Bac Tech__2": 93746,
+        "Dont F": 3590387,
+        "Dont F__1": 305942,
+        "Filière de formation très agrégée": "Total"
     }
 ]

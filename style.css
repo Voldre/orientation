@@ -15,7 +15,7 @@ body {
     border: 1px black solid;
 }
 
-.diplome {
+.contentAUtiliser {
     background-color: rgba(13, 13, 173, 0.3);
     border: 2px black solid;
     justify-content: flex;
@@ -26,11 +26,11 @@ body {
 .container {
     border: 2px rgba(255, 255, 255, 0.700) solid;
     border-radius: 2px;
-    margin: 3%;
-    margin-left: 2%;
-    margin-right: 3%;
+    margin: 1%;
+    margin-left: 0%;
+    margin-right: 0%;
     text-align: center;
-    min-width: 570px;
+    width: 225px;
 }
 
 .flexcontainer {
@@ -42,11 +42,10 @@ body {
     text-align: center;
     min-width: 570px;
     display: flex;
+    justify-content: space-around;
 }
 
 .chart {
-    width: 280px;
-    height: 280px;
     display: flex;
     justify-content: space-around;
     margin-left: auto;
@@ -68,18 +67,16 @@ p {
     color: wheat;
 }
 
-.fixe {
-    position: fixed;
-    background-color: rgb(4, 12, 35);
-    width: 100%;
-    padding: 40px 0 20px 0px;
-    border-bottom: 6px rgba(0, 0, 0, 0.5) solid;
+li.title {
+    text-decoration: underline;
+    font-size: 20px;
+    list-style-type: none;
 }
 
-.fixe h1,
-.fixe h3 {
+.title {
     color: rgb(255, 250, 250);
     text-align: center;
+    margin: 1.5%;
 }
 
 .conteneur h3,
@@ -96,7 +93,7 @@ nav {
     border-radius: 3px;
     position: sticky;
     top: 0px;
-    padding-right: -5px;
+    margin-left: -20px;
 }
 
 .icon {
@@ -145,7 +142,7 @@ nav a:hover {
 }
 
 nav>ul li:hover .sous {
-    transform: translateX(+75%);
+    transform: translateX(+77%);
     margin-left: -15px;
 }
 
@@ -183,22 +180,15 @@ iframe {
 
 @media only screen and (max-width:990px) {
     /* For tablets: */
+    /*
     nav {
         width: 40%;
         font-size: 32px;
         color: wheat;
         font-weight: bold;
     }
-    .fixe h1 {
-        font-size: 36px;
-    }
-    .fixe h3 {
-        font-size: 22px;
-    }
-    .deroulant>a::after {
-        color: blue;
-    }
     nav a {
         padding: 15px 4px;
     }
+    */
 }
