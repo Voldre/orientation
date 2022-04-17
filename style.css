@@ -37,8 +37,8 @@ body {
 .flexcontainer {
     border: 2px rgba(255, 255, 255, 0.700) solid;
     border-radius: 2px;
-    margin: 3%;
-    margin-left: 2%;
+    margin: 2%;
+    margin-top: 1%;
     margin-right: 3%;
     text-align: center;
     min-width: 570px;
@@ -172,21 +172,25 @@ nav>ul li:hover .sous {
 }
 
 .conteneur {
-    margin: 50px 20px;
+    margin: 20px 10px;
     padding: 8px;
     border: 1px rgba(0, 0, 0, 0.2) solid;
+    line-height: 1.5;
 }
 
 .section {
     width: 45%;
-    line-height: 1.5;
+    min-width: 595px;
+    vertical-align: top;
+    text-align: center;
+    line-height: 1.75;
     border: rgb(120, 120, 255) 2px double;
-    background-color: rgba(20, 20, 155, 0.1);
+    background-color: rgba(20, 20, 155, 0.2);
     border-radius: 50px;
     display: inline-block;
-    margin: 5px;
-    padding: 5px;
-    padding-left: 25px;
+    margin: 4px;
+    padding: 7px;
+    padding-left: 15px;
 }
 
 .section li {
@@ -198,11 +202,26 @@ nav>ul li:hover .sous {
 .section .sous-level li {
     list-style: decimal inside;
     margin-left: 25px;
+    line-height: 1.5;
 }
 
 iframe {
     width: 80%;
     height: 425px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 10px;
+}
+
+td,
+th
+/* Mettre une bordure sur les td ET les th */
+
+{
+    border: 1px wheat solid;
+    padding: 3px 11px;
 }
 
 @media only screen and (max-width:990px) {

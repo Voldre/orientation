@@ -41,28 +41,6 @@ jsonResponse.map((table) =>{
 console.log(JSON.stringify(bacData))
 */
 
-// fetch to getJSON from JS : https://stackoverflow.com/questions/1639555/return-get-data-in-a-function-using-jquery 
-
-function getJSON(file)
-{
-     var result = null;
-     $.ajax({
-        url: file,
-        type: 'get',
-        dataType: 'json',
-        async: false,
-        success: function(data) {
-            result = data;
-        } 
-     });
-     return result;
-}
-
-//fetch("fr-esr-parcoursup-2018.json ")
-
-//$.getJSON('parcoursup-2018-diplomes.json', function(data) {
-    //console.log('data',data); });
-
 
 function listeFormations(table) {
 
@@ -114,6 +92,7 @@ function Diplomes() {
                 <div class='container' id={"diplomes-"+myId} style={{backgroundColor:colors[myId]}}>
                 <li class='title' >{table["Filière de formation très agrégée"]}</li>
                 <li>{table["Effectif total des admis"]} admis</li>
+                <li>Dont x% en apprentissage</li>
                 <ChartComponent id={"diplomes-"+myId} data={table} size="225" /> 
                 </div>
                 ))}
@@ -144,28 +123,14 @@ function Baccalaureat(){
         */
 }
 
-// props permet de récupérer tous les paramètres (attributs) défini dans le composent
-// Exemple ici : props.id et props.data, les arguments/attributs de mes composents #HTML
-function ChartComponent(props){
-        //console.log("props:");
-        //console.log(props);
-        var monId = "pie-chart-" + props.id;
-        if(props.size == undefined){
-                props.size = 280;
-        }
-        return(<div class="chart" style={{width:props.size}}> 
-        <canvas id={monId}>
-        </canvas>
-        </div>)
-}
 //        <DiplomesSup />
 
 ReactDOM.render(<React.Fragment>
         <Menu /><Header />
-        <h1>Répartition des poursuites d'études</h1>
-        <h1>Répartition des lycéens admis par formation</h1>
+        <h2>Répartition des poursuites d'études</h2>
+        <h2>Répartition des lycéens admis par formation</h2>
         <Diplomes />
-        <h1>Où vont les lycéens admis ?</h1>
+        <h2>Où vont les lycéens admis ?</h2>
         <Baccalaureat />
         <Footer />
         </React.Fragment>, 
@@ -188,7 +153,7 @@ function updateChart(id,table){
         if(id.includes('diplome')){
                 var keys = ["Dont Bac G__2", "Dont Bac Tech__2", "Dont Bac Pro__2", "Autres"];
                 var showKeys = ["Bac Général", "Bac Technologique", "Bac Professionnel","Autres"];
-                var colorsChart = ["#126","#22338f","#335599","#446"];
+                var colorsChart = ["#127","#22339f","#3355a9","#447"];
 
         }else if(id.includes('bac')){
                 //var keys = Object.keys(table).slice(0,-1); // ["Autre formation","BTS","CPGE","DUT","Licence","PACES"];
