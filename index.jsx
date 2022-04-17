@@ -41,8 +41,6 @@ jsonResponse.map((table) =>{
 console.log(JSON.stringify(bacData))
 */
 
-var infos = [];
-
 // fetch to getJSON from JS : https://stackoverflow.com/questions/1639555/return-get-data-in-a-function-using-jquery 
 
 function getJSON(file)
@@ -65,44 +63,6 @@ function getJSON(file)
 //$.getJSON('parcoursup-2018-diplomes.json', function(data) {
     //console.log('data',data); });
 
-
-// Super important : tout les éléments doivent être inclus dans UN SEUL COMPOSANT
-// Autrement dit, on ne peut pas faire return(<div1></div1> <div2></div2>)
-// Il faut tout intégrer dans "un seul et même bloc" return (<div3>...</div3>)
-
-function Header() {
-         return (<div class="title" >
-        <h1 style={{textDecoration:'underline'}} >Orientation ...</h1>
-        <h3>L'outil d'orientation fait par les jeunes, pour les jeunes</h3>
-        <h3>*Autres = Réorientation (issu d'une autre université) + Etrangés + Reprise d'étude</h3>
-    </div>) } 
-
-function Menu(){ return( <div><br/>
-    <nav>
-        <ul>
-            <li class="deroulant ">
-                <a href="# "><img src=" " class="icon " /></a>
-                <ul class="sous ">
-                    <li><a href="temoignages.html ">Vue d'ensemble</a></li>
-                    <li><a href="# ">Les formations liés à vos passions</a></li>
-                    <li><a href="# ">. . .</a></li>
-                    <li><a href="# ">. . .</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav><br/><br/><br/><br/></div>)}
-    
-/*
-function display(infos) {
-        output = "<div class='flexcontainer'>";
-        for (i in infos) {
-        output += "<div class='diplome' >" + infos[i] + "</div>";
-        }
-        output += "</div>";
-        $("#monreact").append(output);
-}
-*/
-        
 
 function listeFormations(table) {
 
@@ -201,12 +161,13 @@ function ChartComponent(props){
 //        <DiplomesSup />
 
 ReactDOM.render(<React.Fragment>
-        <Header /><Menu />
+        <Menu /><Header />
         <h1>Répartition des poursuites d'études</h1>
         <h1>Répartition des lycéens admis par formation</h1>
         <Diplomes />
         <h1>Où vont les lycéens admis ?</h1>
         <Baccalaureat />
+        <Footer />
         </React.Fragment>, 
         document.getElementById("body")
 )
@@ -231,7 +192,7 @@ function updateChart(id,table){
 
         }else if(id.includes('bac')){
                 //var keys = Object.keys(table).slice(0,-1); // ["Autre formation","BTS","CPGE","DUT","Licence","PACES"];
-                var keys = ["Licence","DUT","BTS","CPGE","PACES","Autre formation"]; 
+                var keys = ["Licence","DUT","BTS","CPGE","PACES","Autres formations"]; 
                 var showKeys = keys;
                 var colorsChart = ["#4b4799","#5f255f","#d21243",
                         "#B27200","#028250","#927280"];

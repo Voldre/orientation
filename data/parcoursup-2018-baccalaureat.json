@@ -1,7 +1,7 @@
 {
     "Bac G": {
         "Candidats": {
-            "Autre formation": 1700411,
+            "Autres formations": 1700411,
             "BTS": 333427,
             "CPGE": 575128,
             "DUT": 493573,
@@ -10,7 +10,7 @@
             "Total": 4542543
         },
         "Admis": {
-            "Autre formation": 25740,
+            "Autres formations": 25740,
             "BTS": 17657,
             "CPGE": 35934,
             "DUT": 31507,
@@ -21,7 +21,7 @@
     },
     "Bac Tech": {
         "Candidats": {
-            "Autre formation": 131339,
+            "Autres formations": 131339,
             "BTS": 596287,
             "CPGE": 22351,
             "DUT": 222283,
@@ -30,7 +30,7 @@
             "Total": 1130176
         },
         "Admis": {
-            "Autre formation": 5496,
+            "Autres formations": 5496,
             "BTS": 41814,
             "CPGE": 2703,
             "DUT": 16458,
@@ -41,7 +41,7 @@
     },
     "Bac Pro": {
         "Candidats": {
-            "Autre formation": 30254,
+            "Autres formations": 30254,
             "BTS": 474870,
             "CPGE": 663,
             "DUT": 20139,
@@ -50,7 +50,7 @@
             "Total": 562590
         },
         "Admis": {
-            "Autre formation": 2453,
+            "Autres formations": 2453,
             "BTS": 41606,
             "CPGE": 119,
             "DUT": 701,

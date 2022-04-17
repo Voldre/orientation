@@ -5,7 +5,8 @@
 }
 
 body {
-    margin: 2%;
+    margin: 1%;
+    margin-left: 0%;
     background-color: rgb(36, 35, 35);
     color: wheat;
 }
@@ -53,7 +54,7 @@ body {
 }
 
 a {
-    color: wheat;
+    color: rgb(120, 120, 255);
 }
 
 h1 {
@@ -87,13 +88,15 @@ li.title {
 nav {
     z-index: 2;
     width: 26%;
+    min-width: 150px;
+    max-width: 225px;
     text-align: left;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(50, 0, 150, 0.2);
     /*rgb(90, 90, 105);*/
     border-radius: 3px;
     position: sticky;
     top: 0px;
-    margin-left: -20px;
+    left: 0px;
 }
 
 .icon {
@@ -131,19 +134,20 @@ nav a:hover {
 }
 
 .sous {
-    display: block;
+    width: 100%;
+    min-width: 150px;
+    max-width: 225px;
     box-shadow: 0px 1px 2px #CCC;
-    background-color: rgba(125, 125, 150, 0.9);
+    background-color: rgba(125, 125, 180, 0.9);
     position: absolute;
-    width: 105%;
     z-index: 1000;
     transition: all .3s;
-    left: -80%;
+    transform: translate(-90%);
+    /*left: -160px;*/
 }
 
 nav>ul li:hover .sous {
-    transform: translateX(+77%);
-    margin-left: -15px;
+    transform: translateX(0);
 }
 
 .sous li {
@@ -159,7 +163,7 @@ nav>ul li:hover .sous {
 
 .sous a:hover {
     border-bottom: none;
-    background-color: RGBa(200, 200, 200, 0.1);
+    background-color: RGBa(160, 160, 240, 0.3);
 }
 
 .deroulant>a::after {
@@ -171,6 +175,29 @@ nav>ul li:hover .sous {
     margin: 50px 20px;
     padding: 8px;
     border: 1px rgba(0, 0, 0, 0.2) solid;
+}
+
+.section {
+    width: 45%;
+    line-height: 1.5;
+    border: rgb(120, 120, 255) 2px double;
+    background-color: rgba(20, 20, 155, 0.1);
+    border-radius: 50px;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    padding-left: 25px;
+}
+
+.section li {
+    text-align: left;
+    list-style: inside;
+    margin-left: 5px;
+}
+
+.section .sous-level li {
+    list-style: decimal inside;
+    margin-left: 25px;
 }
 
 iframe {
