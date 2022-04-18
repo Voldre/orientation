@@ -44,13 +44,12 @@ function ChartComponent(props){
 
 function Header() {
     return (<div class="title" >
-   <h1 style={{textDecoration:'underline'}} >Orientation ...</h1>
+   <h1 style={{textDecoration:'underline'}} >Orientation Etudiant</h1>
    <h3>L'outil d'orientation fait par les jeunes, pour les jeunes</h3>
-   <h3>*Autres = Réorientation (issu d'une autre université) + Etrangés + Reprise d'étude</h3>
    <br/><br/>
-</div>) } 
+ </div>) } 
 
-function Menu(){ return( <div>
+function Menu(){ return( <div><div>
 <nav>
    <ul>
        <li class="deroulant ">
@@ -64,7 +63,8 @@ function Menu(){ return( <div>
            </ul>
        </li>
    </ul>
-</nav><br/></div>)}
+</nav></div><img src="images/logo transparent.png" style={{zIndex:'-1',position:'absolute',top:'17px',right:'25px',width:'220px'}} />
+<br/></div>)}
 
 
 function Footer(){
@@ -80,6 +80,8 @@ function Footer(){
         <li>Rémunération en alternance : <a target="_blank" href={"https://www.alternance-professionnelle.fr/salaire-alternant/"}>Contrat d'apprentissage et de professionnalisation</a> (début 2021 et début 2022) </li>
         <li>Hausse du SMIC le 1er mai 2022 : <a target="_blank" href={"https://travail-emploi.gouv.fr/actualites/presse/communiques-de-presse/article/smic-revalorisation-de-2-65-a-compter-du-1er-mai-2022#:~:text=Avec%20cette%20augmentation%2C%20le%20SMIC,euros%20%C3%A0%201645%2C58%20euros."}>Revalorisation du SMIC - Ministère du travail, de l'emploi et de l'insertion</a></li>
         <li>Nombre d'étudiants en alternance et répartition : <a target="_blank" href={"https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T260/l_apprentissage_dans_l_enseignement_superieur/"} >Ministère de l'enseignement supérieur - Apprentissage dans l'enseignement supérieur</a></li>
+        <a href="../" ><button class='root'>Site du créateur</button></a>
+
     </ul>
     </div></div>)
  }

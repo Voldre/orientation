@@ -87,7 +87,7 @@ function Diplomes() {
         })
         
         var mesDatas = jsonResponse.slice(0,-1); // Sans le "Total"
-         return(
+         return(<div class='bigcontainer'><h2>Répartition des lycéens admis par formation</h2>
          <div id='diplomes' class='flexcontainer'>{mesDatas.map((table, myId) =>(
                 <div class='container' id={"diplomes-"+myId} style={{backgroundColor:colors[myId]}}>
                 <li class='title' >{table["Filière de formation très agrégée"]}</li>
@@ -96,20 +96,21 @@ function Diplomes() {
                 <ChartComponent id={"diplomes-"+myId} data={table} size="225" /> 
                 </div>
                 ))}
+        </div><h3>*Autres = Réorientation (issu d'une autre université) + Etrangés + Reprise d'étude</h3>
         </div>) // Ne pas oublier de mettre le Diagramme lié à chacune des parties 
 }
 
 function Baccalaureat(){
         var colors = ["#112249","#223369","#335599","#446"];
 
-        return(
+        return(<div class='bigcontainer'><h2>Où vont les lycéens admis ?</h2>
            <div id='bac' class='flexcontainer'>{Object.values(bacData).map((bac,bacIndex) => {
                 return(<div class='container' id={'bac-'+bacIndex} style={{width:'270px',backgroundColor:colors[bacIndex]}}><li class='title' >{ BacName[bacIndex] /*Object.keys(bacData)[bacIndex]*/ }</li>{Object.values(bac['Admis']).map((diplome,diplomeIndex) =>
                         <li style={{textAlign:'left',marginLeft:'40px'}}>{Object.keys(bac['Admis'])[diplomeIndex] + " : " + diplome}</li>
                         )}
                         <ChartComponent id={"bac-"+bacIndex} data={bac} size="280" /> </div>
                 );
-           })}</div>);
+           })}</div></div>);
         /* En affichant le nombre de candidats et d'admis
      return(
         <div id='bac' class='flexcontainer'>{Object.values(bacData).map((bac,bacIndex) => {
@@ -127,10 +128,8 @@ function Baccalaureat(){
 
 ReactDOM.render(<React.Fragment>
         <Menu /><Header />
-        <h2>Répartition des poursuites d'études</h2>
-        <h2>Répartition des lycéens admis par formation</h2>
+        <h2>Répartition des poursuites d'études</h2><br/>
         <Diplomes />
-        <h2>Où vont les lycéens admis ?</h2>
         <Baccalaureat />
         <Footer />
         </React.Fragment>, 

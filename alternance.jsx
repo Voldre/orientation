@@ -132,7 +132,7 @@ function Alternance(){
 
 function AlternanceFigures(){
     return(
-    <div class="conteneur">
+    <div class="bigcontainer">
     <h2>Quelques chiffres</h2>
     <div class="flexcontainer">
    <AlternanceData />
