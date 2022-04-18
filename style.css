@@ -11,6 +11,11 @@ body {
     color: wheat;
 }
 
+strong {
+    color: rgb(57, 57, 255);
+    font-size: bold;
+}
+
 .APIContent {
     text-align: center;
     border: 1px black solid;
@@ -250,6 +255,10 @@ th
 {
     border: 1px wheat solid;
     padding: 3px 11px;
+}
+
+.etude {
+    color: gold;
 }
 
 @media only screen and (max-width:990px) {

@@ -25,7 +25,7 @@ function AlternanceData() {
 
     return(
          <div style={{border:'2px solid #041c5f;'}}>
-         <li class='title' style={{color:'#144ccf'}} >Répartition des alternants <br/>en étude supérieurs en <select name="date" id="date" onChange={handleChange}>
+         <li class='title' style={{color:'#144ccf'}} >Répartition des alternants <br/>en étude supérieures en <select name="date" id="date" onChange={handleChange}>
     <option value="2019-20">2020</option>
     <option value="2018-19">2019</option>
     <option value="2017-18">2018</option>

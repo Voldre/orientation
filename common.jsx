@@ -69,10 +69,16 @@ function Menu(){ return( <div><div>
 
 function Footer(){
     return(<div><div class="conteneur ">
-    <h2>Qu'est-ce que c'est ?</h2>
+    <h2>Orientation Etudiant - Qu'est-ce que c'est ?</h2>
     <br/>
-    <p>Un outil en ligne vous permettant de ...</p>
-    </div><div class="conteneur ">
+    <p>C'est un outil en ligne développé par des jeunes, pour des jeunes. Afin de vous accompagner dans votre orientation après le Bac.<br/>
+    Ainsi, ce site à pour objectif de vous donner <strong>une vision réelle</strong> de ce que sont les études supérieures aujourd'hui, avec à l'appui des vrais chiffres.</p>
+    <br/>
+    <h3>Pourquoi ce projet ?</h3>
+    <p>Nous sommes nous-même des étudiants et nous avons vécu la même situation que vous. Ainsi, nous avons conscience des choses que nous aurions aimés connaître il y a quelques années.<br/>
+    De plus, nous avons constaté suite à une <a title="Afficher l'étude" target='_blank' href='images/devenir1an.png' class='etude' >étude du gouvernement</a> que plus d' <strong>1 étudiant sur 4</strong> se réoriente ou abandonne après sa première année d'étude supérieure.<br/>
+    Et cette étude ne prend même pas en compte le fort taux de redoublement, parfois dû à une mauvaise orientation.</p>
+    </div><div class="conteneur">
     <h2>Sources</h2><br/>
     <ul>
         <li>Répartition des lycéens par formation et origines : <a target="_blank" href={"https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup-2018/export/"}>
