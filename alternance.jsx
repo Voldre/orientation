@@ -9,8 +9,9 @@ const keys_to_show = ["BTS","DUT","Autres Bac+2","Licence Professionnelle","Autr
 var displayData = []
 var nbAlternants = 0;
 
+var myChart;
+
 for(var i in alternanceData){
-   console.log(i)
    if(keys_to_keep.includes(alternanceData[i]["Categorie"])){
       displayData[alternanceData[i]["Categorie"]] = alternanceData[i]["2019-20"];
       nbAlternants += alternanceData[i]["2019-20"]
@@ -24,15 +25,22 @@ function AlternanceData() {
 
     return(
          <div style={{border:'2px solid #041c5f;'}}>
-         <li class='title' style={{color:'#144ccf'}} >Répartition des alternants <br/>en étude supérieurs en 2020</li>
-         <li>{nbAlternants} alternants</li>
+         <li class='title' style={{color:'#144ccf'}} >Répartition des alternants <br/>en étude supérieurs en <select name="date" id="date" onChange={handleChange}>
+    <option value="2019-20">2020</option>
+    <option value="2018-19">2019</option>
+    <option value="2017-18">2018</option>
+    <option value="2016-17">2017</option>
+    <option value="2010-11">2010</option>
+    <option value="2005-06">2005</option>
+    <option value="2000-01">2000</option>
+</select></li>
+         <li id='nbAlternants'>{nbAlternants} alternants</li>
          <ChartComponent id="diplomes" data={displayData} size="370px" /> 
-         <p style={{margin:'10x'}}>Source : MENJS-MESRI-DEPP, SIFA <br/>(Système d'Information Formation des Apprentis)</p>
+         <p style={{margin:'10px'}}>Source : MENJS-MESRI-DEPP, SIFA <br/>(Système d'Information Formation des Apprentis)</p>
          </div>
          ) // Ne pas oublier de mettre le Diagramme lié à chacune des parties 
 }
 
-console.log(alternanceData);
 
 ReactDOM.render(<React.Fragment>
     <Menu /><Header_Alternance />
@@ -46,6 +54,20 @@ includeHTML()
 
 updateChart("pie-chart-diplomes",displayData);
 
+
+function handleChange(event) {
+  //console.log(event.target.value)
+  nbAlternants = 0;
+
+  for(var i in alternanceData){
+    if(keys_to_keep.includes(alternanceData[i]["Categorie"])){
+       displayData[alternanceData[i]["Categorie"]] = alternanceData[i][event.target.value];
+       nbAlternants += alternanceData[i][event.target.value]
+    }
+  }
+  document.getElementById('nbAlternants').innerHTML = nbAlternants + " alternants";
+  updateChart('pie-chart-diplomes',displayData, true);
+}
 
 
 function Header_Alternance(){
@@ -180,9 +202,7 @@ function includeHTML() {
 
 
  
-function updateChart(id, table){
-
-   console.log("here")
+function updateChart(id, table, update = false){
 
    var keys = keys_to_keep; 
    var showKeys = keys_to_show;
@@ -229,25 +249,34 @@ function updateChart(id, table){
                    }
            }
            };
-   
-           var ctx = document.getElementById(id).getContext("2d");
-           var myChart = new Chart(ctx, {
-           type: 'pie',
-           data: {
-                   datasets: data
-           },
-           plugins: [ChartDataLabels],
-           options: options
-           });
-   
-   for(var j in colorsChart){
-   myChart.data.datasets[0].backgroundColor.push(colorsChart[j]);
-   }
+
+  var ctx = document.getElementById(id).getContext("2d");
+  
+  if(!update){
+
+    myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+            datasets: data
+    },
+    plugins: [ChartDataLabels],
+    options: options
+    });
+
+    for(var j in colorsChart){
+      myChart.data.datasets[0].backgroundColor.push(colorsChart[j]);
+      }
+
+  }else{ // Clear current data
+    myChart.data.datasets[0].data = [];
+    myChart.data.labels = [];
+  }
+
 
    for (var j in keys) {
-           myChart.data.datasets[0].data.push(table[keys[j]]);
-           myChart.data.labels.push(showKeys[j]);
-           }
+        myChart.data.datasets[0].data.push(table[keys[j]]);
+        myChart.data.labels.push(showKeys[j]);
+    }
    
-           myChart.update();
+    myChart.update();
 }

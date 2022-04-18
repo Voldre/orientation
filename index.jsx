@@ -87,7 +87,7 @@ function Diplomes() {
         })
         
         var mesDatas = jsonResponse.slice(0,-1); // Sans le "Total"
-         return(<div class='bigcontainer'><h2>Répartition des lycéens admis par formation</h2>
+         return(<div class='bigcontainer'><h2>Répartition des lycéens admis par formation (2018)</h2>
          <div id='diplomes' class='flexcontainer'>{mesDatas.map((table, myId) =>(
                 <div class='container' id={"diplomes-"+myId} style={{backgroundColor:colors[myId]}}>
                 <li class='title' >{table["Filière de formation très agrégée"]}</li>
@@ -103,7 +103,7 @@ function Diplomes() {
 function Baccalaureat(){
         var colors = ["#112249","#223369","#335599","#446"];
 
-        return(<div class='bigcontainer'><h2>Où vont les lycéens admis ?</h2>
+        return(<div class='bigcontainer'><h2>Où vont les lycéens admis ? (2018)</h2>
            <div id='bac' class='flexcontainer'>{Object.values(bacData).map((bac,bacIndex) => {
                 return(<div class='container' id={'bac-'+bacIndex} style={{width:'270px',backgroundColor:colors[bacIndex]}}><li class='title' >{ BacName[bacIndex] /*Object.keys(bacData)[bacIndex]*/ }</li>{Object.values(bac['Admis']).map((diplome,diplomeIndex) =>
                         <li style={{textAlign:'left',marginLeft:'40px'}}>{Object.keys(bac['Admis'])[diplomeIndex] + " : " + diplome}</li>
