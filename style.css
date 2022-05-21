@@ -46,7 +46,7 @@ strong {
     margin-bottom: 25px;
 }
 
-.flexcontainer {
+.flexcontainer, .flexcontainerFormation {
     border-radius: 5px;
     margin: 0;
     text-align: center;
@@ -261,7 +261,10 @@ th
     color: gold;
 }
 
-@media only screen and (max-width:990px) {
+@media only screen and (max-width:1350px) {
+    .flexcontainerFormation{
+        justify-content: start;
+    }
     /* For tablets: */
     /*
     nav {

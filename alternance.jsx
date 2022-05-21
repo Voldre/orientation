@@ -139,6 +139,7 @@ function Alternance(){
     <li>Confrontation à des projets réels, avec de vrais enjeux et difficultés</li>
     <li>Gain d'expériences professionnelles, élément primordial à la recherche d'emploi</li>
     <li>Développement de compétences reflétant les besoins des entreprises</li>
+    <li>Une formation plus complète, qui traite des notions peu étudiées dans la théorie</li>
     </div>
     
     <div class='section'><h3>Une formation plus humaine</h3>

@@ -88,7 +88,7 @@ function Diplomes() {
         
         var mesDatas = jsonResponse.slice(0,-1); // Sans le "Total"
          return(<div class='bigcontainer'><h2>Répartition des lycéens admis par formation (2018)</h2>
-         <div id='diplomes' class='flexcontainer'>{mesDatas.map((table, myId) =>(
+         <div id='diplomes' class='flexcontainerFormation'>{mesDatas.map((table, myId) =>(
                 <div class='container' id={"diplomes-"+myId} style={{backgroundColor:colors[myId]}}>
                 <li class='title' >{table["Filière de formation très agrégée"]}</li>
                 <li>{table["Effectif total des admis"]} admis</li>

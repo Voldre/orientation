@@ -86,6 +86,7 @@ function Footer(){
         <li>Rémunération en alternance : <a target="_blank" href={"https://www.alternance-professionnelle.fr/salaire-alternant/"}>Contrat d'apprentissage et de professionnalisation</a> (début 2021 et début 2022) </li>
         <li>Hausse du SMIC le 1er mai 2022 : <a target="_blank" href={"https://travail-emploi.gouv.fr/actualites/presse/communiques-de-presse/article/smic-revalorisation-de-2-65-a-compter-du-1er-mai-2022#:~:text=Avec%20cette%20augmentation%2C%20le%20SMIC,euros%20%C3%A0%201645%2C58%20euros."}>Revalorisation du SMIC - Ministère du travail, de l'emploi et de l'insertion</a></li>
         <li>Nombre d'étudiants en alternance et répartition : <a target="_blank" href={"https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T260/l_apprentissage_dans_l_enseignement_superieur/"} >Ministère de l'enseignement supérieur - Apprentissage dans l'enseignement supérieur</a></li>
+        <li>Plus d'informations sur l'alternance : <a target="_blank" href={"https://www.alternance.emploi.gouv.fr/decouvrir-lalternance"}> </a> Portail de l'alternance  - Site du Ministère de l'Emploi</li>
         <a href="../" ><button class='root'>Site du créateur</button></a>
 
     </ul>
