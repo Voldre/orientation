@@ -251,7 +251,6 @@ table {
 td,
 th
 /* Mettre une bordure sur les td ET les th */
-
 {
     border: 1px wheat solid;
     padding: 3px 11px;
@@ -261,22 +260,108 @@ th
     color: gold;
 }
 
+.help{  
+    margin-left: 10px;
+    height: 28px;
+}
+.help-tip{
+    cursor:pointer;
+    display: inline-block;
+}
+.help-tip:hover{
+    filter: saturate(2.75);
+}
+.help-tip:hover #transition-hover-content{
+    opacity: 1;
+}
+.help-tip:hover p{
+    cursor:auto;
+    display:block;
+}
+.help-tip p{   
+    display: none;
+}
+#transition-hover-content {
+    position:absolute;
+    opacity: 0;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
+}
+#transition-hover-content p{
+    font-size:13.2px;
+    font-weight: normal;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px double wheat;
+    margin-top: 25px;
+    margin-left: 40px;
+    padding: 7px;
+    line-height: 1.1;
+    width: 140px;
+}
+
+#alt{
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+#alt:hover{
+    text-decoration: underline;
+}
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+
 @media only screen and (max-width:1350px) {
     .flexcontainerFormation{
         justify-content: start;
     }
-    /* For tablets: */
-    /*
-    nav {
-        width: 40%;
-        font-size: 32px;
-        color: wheat;
-        font-weight: bold;
+}
+
+@media only screen and (max-width:700px) {
+    .bigcontainer{
+        text-align: center;
     }
-    nav a {
-        padding: 15px 4px;
+    .flexcontainer, .flexcontainerFormation{
+        display: inline-block;
+        min-width:auto;
     }
-    */
+    h1{
+        font-size: 23px;
+    }
+    h2{
+        font-size: 19px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    p,li{
+        font-size: 13px;
+    }
+    .section{
+        width: auto;
+        min-width: auto;
+    }
 }
 
 .root {

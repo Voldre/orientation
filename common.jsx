@@ -3,6 +3,7 @@
 
 function getJSON(file)
 {
+    console.log(file);
      var result = null;
      $.ajax({
         url: file,
@@ -11,7 +12,10 @@ function getJSON(file)
         async: false,
         success: function(data) {
             result = data;
-        } 
+        },
+        error: function( jqXhr, textStatus, errorMessage ) {
+             result = errorMessage+":"+textStatus;
+        }
      });
      return result;
 }
@@ -31,6 +35,7 @@ function ChartComponent(props){
     </canvas>
     </div>)
 }
+
 
 //fetch("fr-esr-parcoursup-2018.json ")
 
@@ -81,14 +86,49 @@ function Footer(){
     </div><div class="conteneur">
     <h2>Sources</h2><br/>
     <ul>
-        <li>Répartition des lycéens par formation et origines : <a target="_blank" href={"https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup-2018/export/"}>
-        Parcoursup 2018 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements </a></li>
+        <li>Répartition des lycéens par formation et origines : <a target="_blank" href={"https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup-2018/export/"}> 
+        Parcoursup 2018 - vœux de poursuite d'études et de réorientation dans l'enseignement supérieur et réponses des établissements </a> #dataESR</li>
         <li>Rémunération en alternance : <a target="_blank" href={"https://www.alternance-professionnelle.fr/salaire-alternant/"}>Contrat d'apprentissage et de professionnalisation</a> (début 2021 et début 2022) </li>
         <li>Hausse du SMIC le 1er mai 2022 : <a target="_blank" href={"https://travail-emploi.gouv.fr/actualites/presse/communiques-de-presse/article/smic-revalorisation-de-2-65-a-compter-du-1er-mai-2022#:~:text=Avec%20cette%20augmentation%2C%20le%20SMIC,euros%20%C3%A0%201645%2C58%20euros."}>Revalorisation du SMIC - Ministère du travail, de l'emploi et de l'insertion</a></li>
-        <li>Nombre d'étudiants en alternance et répartition : <a target="_blank" href={"https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T260/l_apprentissage_dans_l_enseignement_superieur/"} >Ministère de l'enseignement supérieur - Apprentissage dans l'enseignement supérieur</a></li>
+        <li>Nombre d'étudiants en alternance et répartition : <a target="_blank" href={"https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T260/l_apprentissage_dans_l_enseignement_superieur/"} >Publication EESR - Ministère de l'enseignement supérieur - Apprentissage dans l'enseignement supérieur</a></li>
         <li>Plus d'informations sur l'alternance : <a target="_blank" href={"https://www.alternance.emploi.gouv.fr/decouvrir-lalternance"}> </a> Portail de l'alternance  - Site du Ministère de l'Emploi</li>
+        <li>Réforme du "DUT" en "BUT" : <a target="_blank" href={"https://www.alternance.emploi.gouv.fr/decouvrir-lalternance"}>BUT - tout savoir sur le Bachelor Universitaire de Technologie</a></li>
         <a href="../" ><button class='root'>Site du créateur</button></a>
 
     </ul>
     </div></div>)
  }
+
+ 
+function Source(props){
+
+    var dataSources = ["bac","Licence Professionnelle","Ecole d'Ingénieurs","Master"];
+    
+    if(!props.maSource || !dataSources.includes(props.maSource)) return("");
+    
+    if(props.maSource == "bac"){
+        var urlBefore = "Voeux acceptés par les lycéens sur ";
+        var br1 = 0;
+        var url = 'https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/EESR12_ES_08/l_orientation_des_nouveaux_bacheliers_sur_parcoursup_les_voeux_et_les_propositions_d_admission/';
+        var urlInside = "Parcoursup";
+        var br2 = 2;
+        var urlAfter = "Autres formations : Ecoles d'Art, d'Architecture, ...";
+    }else{
+        var urlBefore= "Source : ";
+        var br1 = 1;
+        var url = props.url;
+        var br2 = 0;
+        var urlInside = props.text;
+    }
+
+    return(<span class="help-tip">
+        <div id="transition-hover-content" >
+          <p> {urlBefore}<Br n={br1}/><a target='_blank' href={url}>{urlInside}</a><Br n={br2}/>{urlAfter}</p>
+        </div>
+        <svg width="32" height="32" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class='help' ><circle cx="18" cy="19" r="14"></circle><path d="M 13.635 13.5 A 4.5 4.5 90 0 1 22.38 15 C 22.38 18 19 17 17.88 19.5 V 22"></path><line x1="18" y1="27" x2="18.02" y2="27.1"></line></svg></span>);
+}
+
+function Br(props){
+    if(props.n == 0 || props.n == null) return("");
+    return([...Array(props.n)].map((e, i) => <br/>));
+}

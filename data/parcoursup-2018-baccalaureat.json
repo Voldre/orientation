@@ -3,7 +3,7 @@
         "Candidats": {
             "Autres formations": 1700411,
             "BTS": 333427,
-            "CPGE": 575128,
+            "Classes Prépas": 575128,
             "DUT": 493573,
             "Licence": 1263246,
             "PACES": 176758,
@@ -12,7 +12,7 @@
         "Admis": {
             "Autres formations": 25740,
             "BTS": 17657,
-            "CPGE": 35934,
+            "Classes Prépas": 35934,
             "DUT": 31507,
             "Licence": 154123,
             "PACES": 35241,
@@ -23,7 +23,7 @@
         "Candidats": {
             "Autres formations": 131339,
             "BTS": 596287,
-            "CPGE": 22351,
+            "Classes Prépas": 22351,
             "DUT": 222283,
             "Licence": 150031,
             "PACES": 7885,
@@ -32,7 +32,7 @@
         "Admis": {
             "Autres formations": 5496,
             "BTS": 41814,
-            "CPGE": 2703,
+            "Classes Prépas": 2703,
             "DUT": 16458,
             "Licence": 25673,
             "PACES": 1602,
@@ -43,7 +43,7 @@
         "Candidats": {
             "Autres formations": 30254,
             "BTS": 474870,
-            "CPGE": 663,
+            "Classes Prépas": 663,
             "DUT": 20139,
             "Licence": 34792,
             "PACES": 1872,
@@ -52,7 +52,7 @@
         "Admis": {
             "Autres formations": 2453,
             "BTS": 41606,
-            "CPGE": 119,
+            "Classes Prépas": 119,
             "DUT": 701,
             "Licence": 9965,
             "PACES": 543,

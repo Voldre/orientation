@@ -59,7 +59,8 @@
         "Dont Bac Tech__2": 2703,
         "Dont F": 302658,
         "Dont F__1": 18174,
-        "Filière de formation très agrégée": "CPGE"
+        "Filière de formation très agrégée": "Classes Prépas",
+        "_comment" : "Classes Prépas = CPGE + CPI"
     },
     {
         "Effectif total des candidats pour la formation": 900066,

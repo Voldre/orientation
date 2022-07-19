@@ -1,0 +1,56 @@
+{
+    "Licence Professionnelle" :{
+        "Poursuite": {  // 20% poursuivent apparemment : https://www.letudiant.fr/etudes/fac/que-faire-apres-une-licence-pro.html
+            "Autres": ,
+            "Master": ,
+            "Ecole d'Ingénieurs": ,
+            "Fin des Etudes": ,
+            "Total": 
+        }
+    },
+    "Licence Générale" : {
+        "Source": "https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T149/les_parcours_et_la_reussite_en_licence_licence_professionnelle_et_master_a_l_universite/#ILL_EESR15_ES_21_04",
+        "Poursuite": {
+            "Autres": ,
+            "Master": 61.3%,
+            "Ecole d'Ingénieurs": ,
+            "Fin des Etudes": ,
+            "Total":
+        }
+    },
+    "DUT": {
+        "Source" : "https://publication.enseignementsup-recherche.gouv.fr/eesr/7/EESR7_ES_16-parcours_et_reussite_en_sts_iut_et_cpge.php",
+        "Poursuite": {
+            "Autres": ,
+            "Licence": ,
+            "Licence Pro": ,
+            "Ecole d'Ingénieurs": ,
+            "Fin des Etudes": ,
+            "Total": 
+        }    
+    },
+    "CPGE":{
+        "Poursuite": {
+            "Autres": ,
+            "Licence": ,
+            "Licence Pro": ,
+            "Ecole d'Ingénieurs": ,
+            "Fin des Etudes": ,
+            "Total": 
+        }
+    },
+    "BTS":{
+        "Source" : ,
+        "Poursuite": {
+            "Autres": 9,
+            "Licence": 1,
+            "Licence Pro": 9,
+            "Ecole d'Ingénieurs": 5,
+            "Fin des Etudes": ,
+            "Total": 
+        }      },
+    {
+        "Categorie": "Autres formations",
+        "Poursuite": 52
+    }
+}

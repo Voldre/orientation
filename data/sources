@@ -1,0 +1,28 @@
+Sources de chacune des données JSON :
+
+fr-esr-parcoursup-2018
+Données de Parcoursup accessible sur #dataESR
+https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-parcoursup-2018/export/
+Egalement accessible ici sur les publications du MESR avec l'EESRI (Etat de l'Enseignement Supérieur, de la Recherche et de l'Inovation) : 
+https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/EESR12_ES_08/l_orientation_des_nouveaux_bacheliers_sur_parcoursup_les_voeux_et_les_propositions_d_admission/
+
+
+MENJS-MESRI-DEPP-SIFA-2021
+Évolution des effectifs d'apprentis préparant un diplôme d'enseignement supérieur - MESRI ESR (Enseignement Supérieur de la Recherche)
+https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T260/l_apprentissage_dans_l_enseignement_superieur/#TEXTE
+    Utilisé pour le diagramme circulaire sur l'Alternance
++ https://publication.enseignementsup-recherche.gouv.fr/eesr/FR/T748/l_insertion_professionnelle_des_alternants_de_l_enseignement_superieur/
+"% d'alternants dans chaque diplomes"
+
+
+parcoursup-2018-...
+Détails du jeu de données parcoursup.
+Trié par diplomes (et sous formations (#fillière), puis chacune des formations détaillées) et par établissements
+
+    parcoursup-2018-diplomes.json : calcul les effectifs des 1eres études supérieures (DUT, BTS, CPGE, ...) par provenance #Bac
+
+    parcoursup-2018-baccalaureat.json : calcul les effectifs des bac selon les 1eres études supérieures choisies : regroupement Power BI
+
+etudes-2e-provenance.json
+Données listant la pronvenance des élèves du second niveau d'étude (nécessitant Bac+2 ou Bac+3) : Licence pro, Ecole d'ingé, Master
+Sources : très diverses, listées dans le fichier JSON

@@ -1,0 +1,48 @@
+{
+    "Licence Professionnelle" : {
+        "Source" : "SIES Effectifs en licence professionnelle 2017-2018",
+        "Lien" : "https://www.enseignementsup-recherche.gouv.fr/fr/les-effectifs-en-licence-professionnelle-en-2017-2018-47341 ",
+        "Admis": {
+            "Autres": 21892,
+            "BTS": 13020, 
+            "DUT": 12233, 
+            "Licence": 3045, 
+            "Autres Bac+2, +3": 2310, 
+            "Total": 52500  
+        }
+    },
+    "Ecole d'Ingénieurs":{
+        "Source" : "SIES Effectifs inscrits en cycle ingénieur 2021-2022",
+        "Lien" : "https://www.enseignementsup-recherche.gouv.fr/fr/les-effectifs-inscrits-en-cycle-ingenieur-en-2021-2022-85781",
+        "Admis": {
+            "Autres": 4771,
+            "Prépa": 16966, 
+            "Prépa Intégrée": 13785, 
+            "DUT/BTS": 8918, 
+            "Autres Bac+2, +3": 3760, 
+            "Total": 48200 
+        }
+    },
+    "Master":{
+        "Source" : "SIES Parcours et réussite en master - session 2020 ",
+        "Lien" : "https://www.enseignementsup-recherche.gouv.fr/fr/parcours-et-reussite-en-master-l-universite-les-resultats-de-la-session-2020-83693",
+        "Admis": {
+            "Autres": 42183, 
+            "Licence": 108475,
+            "Licence Pro": 5377,
+            "Autres Bac+3 et >": 6840, 
+            "Total": 162875
+        }    
+    },
+    "Ecole d'Ingénieurs en alternance":{
+        "Source" : "RERS 2021 - 5.06 L'apprentissage dans le supérieur",
+        "Lien" : "https://www.education.gouv.fr/reperes-et-references-statistiques-2021-308228",
+        "Admis": {
+            "Autres": 878,
+            "BTS": 1318, 
+            "Autres Bac+2, +3": 2369, 
+            "DUT": 4210, 
+            "Total": 8775 
+        }    
+    }
+}
